@@ -29,7 +29,7 @@ def classif():
     # Creates a response object
     # [0] because it is launched on a single client
     # [1] because we want to extract the probability of the client to be a bad client
-    proba_echec = model.predict_proba(data)[0][1] 
+    proba_echec = 1 - model.predict_proba(data)[0][1] 
 
     if proba_echec > 0.5 :
         classe = 'refusé'
